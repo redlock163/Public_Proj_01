@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/wangdi/Documents/trae_projects/Test_C_Proj_0405",
-      "program": "c:/Users/wangdi/Documents/trae_projects/Test_C_Proj_0405/bin/sort_demo.exe",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/bin/sort_demo.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
@@ -27,8 +27,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/wangdi/Documents/trae_projects/Test_C_Proj_0405",
-      "program": "c:/Users/wangdi/Documents/trae_projects/Test_C_Proj_0405/bin/sort_test.exe",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/bin/sort_test.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb"
     },
@@ -39,8 +39,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/wangdi/Documents/trae_projects/Test_C_Proj_0405",
-      "program": "c:/Users/wangdi/Documents/trae_projects/Test_C_Proj_0405/build/Debug/outDebug",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
@@ -50,6 +50,15 @@
           "ignoreFailures": true
         }
       ]
+    },
+    {
+      "name": "Python Debugger: Zaobao main.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/python/zaobao_regex_news/main.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/python/zaobao_regex_news",
+      "justMyCode": true
     }
   ]
 }

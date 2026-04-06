@@ -2,6 +2,8 @@
 
 这是一个使用 C 语言实现的排序算法示例项目，包含算法实现、演示程序、测试程序，以及基础的构建脚本，适合学习项目结构整理、排序算法实现和简单性能对比。
 
+仓库中另外还加入了一个独立的 Python 示例项目，用于抓取联合早报首页并用正则提取 5 条新闻标题，位置在 `python/zaobao_regex_news/`。
+
 ## 功能特点
 
 - 实现了冒泡排序
@@ -27,6 +29,8 @@
 ├── build.bat           # Windows 下构建脚本
 ├── make.bat            # Windows 下的 make 包装脚本
 ├── Makefile            # Make 构建脚本
+├── python/
+│   └── zaobao_regex_news/   # Python 抓取示例项目
 └── .vscode/            # VS Code 配置文件
 ```
 
