@@ -1,104 +1,104 @@
-# Sorting Algorithms in C
+# C 语言排序算法示例项目
 
-A small C project for implementing, demonstrating, and testing classic sorting algorithms.
+这是一个使用 C 语言实现的排序算法示例项目，包含算法实现、演示程序、测试程序，以及基础的构建脚本，适合学习项目结构整理、排序算法实现和简单性能对比。
 
-## Features
+## 功能特点
 
-- Bubble sort
-- Quick sort
-- Merge sort
-- Demo executable for manual runs and timing
-- Separate test executable for deterministic verification
-- Unified public sort API using `(arr, n)`
+- 实现了冒泡排序
+- 实现了快速排序
+- 实现了归并排序
+- 提供演示程序，可直接查看排序结果与性能测试输出
+- 提供独立测试程序，用于验证排序正确性
+- 对外排序接口统一为 `(arr, n)` 风格，调用更简单
 
-## Project Structure
+## 项目结构
 
 ```text
 .
 ├── include/
-│   └── sort.h          # Public sorting API
+│   └── sort.h          # 对外头文件，声明公共接口
 ├── src/
-│   ├── main.c          # Demo and performance runner
-│   └── sort.c          # Sorting implementations
+│   ├── main.c          # 演示程序与性能测试入口
+│   └── sort.c          # 排序算法具体实现
 ├── tests/
-│   └── sort_test.c     # Deterministic correctness checks
-├── bin/                # Built executables
-├── build/              # Intermediate object files
-├── build.bat           # Windows build script
-├── Makefile            # GNU Make build file
-└── .vscode/            # Editor configuration
+│   └── sort_test.c     # 排序正确性测试程序
+├── bin/                # 编译生成的可执行文件
+├── build/              # 编译生成的中间文件
+├── build.bat           # Windows 下构建脚本
+├── Makefile            # Make 构建脚本
+└── .vscode/            # VS Code 配置文件
 ```
 
-## Why This Layout
+## 这样组织的好处
 
-- `include/` keeps the public API easy to find.
-- `src/` contains production code only.
-- `tests/` avoids mixing test code with implementation code.
-- `bin/` and `build/` keep generated files out of the project root.
-- Recursive helper functions stay private inside `src/sort.c`.
+- `include/` 用来集中管理公共接口，查找头文件更方便
+- `src/` 只放正式功能代码，职责清晰
+- `tests/` 专门放测试代码，避免和业务代码混在一起
+- `bin/` 与 `build/` 用来放生成文件，保持项目根目录整洁
+- 递归辅助函数只保留在 `src/sort.c` 内部，减少对外暴露的实现细节
 
-## Prerequisites
+## 环境要求
 
-- GCC
-- GNU Make if you want to use `make`
+- GCC 编译器
+- GNU Make，若你希望使用 `make` 进行构建
 
-## Building
+## 编译方式
 
-### Windows batch script
+### 使用 Windows 批处理脚本
 
 ```bash
 .\build.bat
 ```
 
-### GNU Make
+### 使用 Make
 
 ```bash
 make
 ```
 
-## Running
+## 运行演示程序
 
 ```bash
 bin\sort_demo.exe
 ```
 
-Or with `make`:
+或者使用：
 
 ```bash
 make run
 ```
 
-## Testing
+## 运行测试程序
 
 ```bash
 bin\sort_test.exe
 ```
 
-Or with `make`:
+或者使用：
 
 ```bash
 make test
 ```
 
-The test program covers:
+当前测试覆盖了以下场景：
 
-- empty input
-- single element
-- repeated values
-- reverse-sorted input
-- already sorted input
-- negative numbers
+- 空数组
+- 单元素数组
+- 含重复值的数组
+- 逆序数组
+- 已排序数组
+- 含负数的数组
 
-## Cleaning
+## 清理生成文件
 
 ```bash
 make clean
 ```
 
-## Time Complexity
+## 时间复杂度
 
-| Algorithm   | Average    | Worst      | Space      | Stable |
-|-------------|------------|------------|------------|--------|
-| Bubble Sort | O(n^2)     | O(n^2)     | O(1)       | Yes    |
-| Quick Sort  | O(n log n) | O(n^2)     | O(log n)   | No     |
-| Merge Sort  | O(n log n) | O(n log n) | O(n)       | Yes    |
+| 算法 | 平均时间复杂度 | 最坏时间复杂度 | 空间复杂度 | 是否稳定 |
+|------|----------------|----------------|------------|----------|
+| 冒泡排序 | O(n^2) | O(n^2) | O(1) | 是 |
+| 快速排序 | O(n log n) | O(n^2) | O(log n) | 否 |
+| 归并排序 | O(n log n) | O(n log n) | O(n) | 是 |
