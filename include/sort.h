@@ -1,7 +1,7 @@
 #ifndef SORT_H
 #define SORT_H
 
-void bubble_sort(int arr[], int n);
+int bubble_sort(int arr[], int n);
 int quick_sort(int arr[], int n);
 int merge_sort(int arr[], int n);
 void print_array(int arr[], int n);

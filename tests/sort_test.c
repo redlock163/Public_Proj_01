@@ -31,11 +31,6 @@ static void assert_sorted_result(const char* name, int input[], int expected[], 
     free(working);
 }
 
-static int bubble_adapter(int arr[], int n) {
-    bubble_sort(arr, n);
-    return 1;
-}
-
 static void run_standard_suite(const char* name, sort_fn sorter) {
     int input1[] = {42, 7, 7, 19, -3, 0, 88, 12};
     int expected1[] = {-3, 0, 7, 7, 12, 19, 42, 88};
@@ -62,7 +57,7 @@ static void run_standard_suite(const char* name, sort_fn sorter) {
 }
 
 int main(void) {
-    run_standard_suite("bubble_sort", bubble_adapter);
+    run_standard_suite("bubble_sort", bubble_sort);
     run_standard_suite("quick_sort", quick_sort);
     run_standard_suite("merge_sort", merge_sort);
 

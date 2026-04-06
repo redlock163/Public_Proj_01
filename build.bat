@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set "CC=gcc"
+set "CC=C:\ProgramData\mingw64\mingw64\bin\gcc.exe"
 set "CFLAGS=-Wall -Wextra -g -Iinclude"
 set "OBJ_DIR=build\obj"
 set "BIN_DIR=bin"

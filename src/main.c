@@ -9,11 +9,6 @@ static void fill_random_array(int arr[], int n, int max_value) {
     }
 }
 
-static int bubble_sort_adapter(int arr[], int n) {
-    bubble_sort(arr, n);
-    return 1;
-}
-
 static void run_demo_sort(const char* name, int arr[], int size, int (*sorter)(int[], int)) {
     printf("%s:\n", name);
     if (!sorter(arr, size)) {
@@ -36,10 +31,7 @@ static void run_demo(void) {
     printf("\n");
 
     copy_array(original, working, size);
-    bubble_sort(working, size);
-    printf("Bubble Sort:\n");
-    print_array(working, size);
-    printf("Sorted: %s\n\n", is_sorted(working, size) ? "Yes" : "No");
+    run_demo_sort("Bubble Sort", working, size, bubble_sort);
 
     copy_array(original, working, size);
     run_demo_sort("Quick Sort", working, size, quick_sort);
@@ -79,7 +71,7 @@ static void run_benchmark(void) {
     fill_random_array(original, size, 10000);
 
     printf("Performance test with larger array (%d elements):\n", size);
-    run_benchmark_sort("Bubble Sort", original, working, size, bubble_sort_adapter);
+    run_benchmark_sort("Bubble Sort", original, working, size, bubble_sort);
     run_benchmark_sort("Quick Sort", original, working, size, quick_sort);
     run_benchmark_sort("Merge Sort", original, working, size, merge_sort);
 
